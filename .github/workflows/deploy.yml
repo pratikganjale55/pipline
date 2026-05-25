@@ -34,17 +34,7 @@ jobs:
         run: |
           docker build -t pratikganjale/basic-app:latest .
           docker push pratikganjale/basic-app:latest
-
-  deploy-local:
-    runs-on: self-hosted        
-    needs: build-and-push        
-    steps:
-      - name: Pull and run latest image
-        run: |
-          docker stop my_app || true
-          docker rm my_app || true
-          docker pull pratikganjale/create_cicd:latest
-          docker run -d -p 5500:5500 --name my_app pratikganjale/create_cicd:latest
+    
 
       # 4. SSH into your server and deploy
       # - name: Deploy to server
