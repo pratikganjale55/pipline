@@ -18,6 +18,10 @@ app.get("/data", (req: Request, res: Response) => {
     {
       name : "Bob",
       age : 25
+    },
+     {
+      name : "Jack",
+      age : 40
     }
   ])
 });
